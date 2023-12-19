@@ -92,14 +92,16 @@ allprojects {
         }
     
 
-    if (project.name != 'integration-tests' && project.name != 'web3j') {
+    if(project.name != 'integration-tests' && project.name != 'web3j') {
         apply from: "$rootDir/gradle/publish/build.gradle"
     }
 }
+	
 configure(subprojects.findAll { it.name != 'integration-tests' }) {
     apply from: "$rootDir/gradle/jacoco/build.gradle"
 }
 
+}
 
 dependencyResolutionManagement {
         repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -111,7 +113,7 @@ dependencyResolutionManagement {
 	dependencies {
 	        implementation 'com.github.mcarrier69:web3j:master-SNAPSHOT'
 	}
-}
+
 
 
 tasks.named("spotlessJava").configure { dependsOn("spotlessGroovyGradle") }
