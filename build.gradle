@@ -108,10 +108,9 @@ dependencyResolutionManagement {
             maven { url 'https://jitpack.io' }
         }
     }
-    dependencies {
-        implementation 'com.github.mcarrier69:web3j:master'
-    }
-    }
+	dependencies {
+	        implementation 'com.github.mcarrier69:web3j:master-SNAPSHOT'
+	}
 
     maven { url "https://jitpack.io"  }
 
