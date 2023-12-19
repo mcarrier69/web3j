@@ -89,13 +89,16 @@ allprojects {
                 force(group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion)
             }
         }
-        	dependencyResolutionManagement {
-		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-		repositories {
-			mavenCentral()
-			maven { url 'https://jitpack.io' }
-		}
-	}
+    dependencyResolutionManagement {
+        repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+        repositories {
+            mavenCentral()
+            maven { url 'https://jitpack.io' }
+        }
+    }
+    dependencies {
+        implementation 'com.github.mcarrier69:web3j:master'
+    }
     }
 
     if (project.name != 'integration-tests' && project.name != 'web3j') {
