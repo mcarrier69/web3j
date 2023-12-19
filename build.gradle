@@ -8,7 +8,8 @@ plugins {
     id 'de.marcphilipp.nexus-publish' version '0.4.0'
     id 'de.undercouch.download' version '4.1.1'
     id 'org.ajoberstar.git-publish' version '3.0.1'
-    
+    id 'maven'
+    id 'maven-publish'
 }
 
 group = 'com.github.mcarrier69'
@@ -112,10 +113,7 @@ dependencyResolutionManagement {
 	        implementation 'com.github.mcarrier69:web3j:master-SNAPSHOT'
 	}
 
-    maven { url "https://jitpack.io"  }
 
-apply plugin: 'maven' 
-apply plugin: 'maven-publish' 
 
 tasks.named("spotlessJava").configure { dependsOn("spotlessGroovyGradle") }
 tasks.named("spotlessKotlin").configure { dependsOn("spotlessJava", "spotlessGroovyGradle") }
