@@ -13,6 +13,34 @@ plugins {
 
 group = 'com.github.mcarrier69'
 
+sourceCompatibility = 1.8 // java 8
+targetCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'com.google.guava:guava:29.0-jre'
+}
+
+java {
+	withSourcesJar()
+	withJavadocJar()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+		from components.java
+        }
+    }
+}
+
+wrapper {
+    gradleVersion = "7.3.3"
+    distributionType = Wrapper.DistributionType.ALL
+}
 
 ext {
     bouncycastleVersion = '1.73'
