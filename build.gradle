@@ -33,7 +33,7 @@ publishing {
 }
 
 wrapper {
-    gradleVersion = "8.5.0"
+    gradleVersion = "7.3.3"
     distributionType = Wrapper.DistributionType.ALL
 }
 
