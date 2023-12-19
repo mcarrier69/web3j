@@ -113,6 +113,8 @@ dependencyResolutionManagement {
     }
     }
 
+    maven { url "https://jitpack.io"  }
+
 apply plugin: 'maven' 
 
 
