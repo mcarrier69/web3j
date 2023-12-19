@@ -10,9 +10,7 @@ plugins {
     id 'org.ajoberstar.git-publish' version '3.0.1'
 }
 
-apply plugin: 'maven'
-    
-group = 'com.github.mcarrier69'
+
 
 ext {
     bouncycastleVersion = '1.73'
