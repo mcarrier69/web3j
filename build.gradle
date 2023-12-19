@@ -89,7 +89,18 @@ allprojects {
                 force(group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion)
             }
         }
-    dependencyResolutionManagement {
+    
+
+    if (project.name != 'integration-tests' && project.name != 'web3j') {
+        apply from: "$rootDir/gradle/publish/build.gradle"
+    }
+}
+configure(subprojects.findAll { it.name != 'integration-tests' }) {
+    apply from: "$rootDir/gradle/jacoco/build.gradle"
+}
+
+
+dependencyResolutionManagement {
         repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
         repositories {
             mavenCentral()
@@ -100,15 +111,6 @@ allprojects {
         implementation 'com.github.mcarrier69:web3j:master'
     }
     }
-
-    if (project.name != 'integration-tests' && project.name != 'web3j') {
-        apply from: "$rootDir/gradle/publish/build.gradle"
-    }
-}
-configure(subprojects.findAll { it.name != 'integration-tests' }) {
-    apply from: "$rootDir/gradle/jacoco/build.gradle"
-}
-
 
 tasks.named("spotlessJava").configure { dependsOn("spotlessGroovyGradle") }
 tasks.named("spotlessKotlin").configure { dependsOn("spotlessJava", "spotlessGroovyGradle") }
