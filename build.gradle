@@ -115,7 +115,7 @@ dependencyResolutionManagement {
     maven { url "https://jitpack.io"  }
 
 apply plugin: 'maven' 
-
+apply plugin: 'maven-publish' 
 
 tasks.named("spotlessJava").configure { dependsOn("spotlessGroovyGradle") }
 tasks.named("spotlessKotlin").configure { dependsOn("spotlessJava", "spotlessGroovyGradle") }
