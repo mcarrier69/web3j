@@ -1,5 +1,5 @@
 plugins {
-    id 'java' version '17.0.1'
+    id 'java'
     id 'idea'
     id 'org.sonarqube' version '3.4.0.2513'
     id 'jacoco'
@@ -33,7 +33,7 @@ publishing {
 }
 
 wrapper {
-    gradleVersion = "7.3.3"
+    gradleVersion = "8.5.0"
     distributionType = Wrapper.DistributionType.ALL
 }
 
