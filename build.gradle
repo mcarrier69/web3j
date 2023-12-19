@@ -13,16 +13,11 @@ plugins {
 
 group = 'com.github.mcarrier69'
 
-sourceCompatibility = 1.8 // java 8
-targetCompatibility = 1.8
 
 repositories {
   mavenCentral()
 }
 
-dependencies {
-  implementation 'com.google.guava:guava:29.0-jre'
-}
 
 java {
 	withSourcesJar()
